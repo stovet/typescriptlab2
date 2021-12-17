@@ -4,8 +4,6 @@ export class Greeter {
         this.greeting = greeting;
     }
     greet(name: string): string {
-        return `${this.greeting}, ${name}`
+        return `${this.greeting}, ${name}!`
     }
 }
-
-let greeter = new Greeter("Hello");

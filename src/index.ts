@@ -1,2 +1,3 @@
-import './greeter'
-import './JavaScriptGreeter'
+import './greeter';
+import './JavaScriptGreeter';
+import './loudGreeter';
