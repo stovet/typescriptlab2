@@ -1,6 +1,7 @@
 import { Greeter } from "../src/greeter";
 import { JavaScriptGreeter} from "../src/JavaScriptGreeter";
 import { LoudGreeter } from "../src/loudGreeter";
+import { HtmlGreeter } from "../src/htmlgreeter"
 
 describe("test greeter.ts", function (){
     test("test with 'Hi there'", function(){
@@ -29,8 +30,22 @@ describe("tests loudGreeter", function () {
         let greeter = new LoudGreeter("Hiya");
         expect(greeter.greet("dude")).toEqual("Hiya, dude!!")
     })
-    test("without calling addVolume", function(){
+    test("with calling addVolume", function(){
         let greeter = new LoudGreeter("Hiya");
-        expect(greeter.greet("dude")).toEqual("Hiya, dude!!")
+        greeter.addVolume();
+        expect(greeter.greet("dude")).toEqual("Hiya, dude!!!")
+    });
+    test("calling addVolume 2 times", function(){
+        let greeter = new LoudGreeter("Hiya");
+        greeter.addVolume();
+        greeter.addVolume();
+        expect(greeter.greet("dude")).toEqual("Hiya, dude!!!!")
+    });
+    test("calling addVolume 3 times", function(){
+        let greeter = new LoudGreeter("Hiya");
+        greeter.addVolume();
+        greeter.addVolume();
+        greeter.addVolume();
+        expect(greeter.greet("dude")).toEqual("Hiya, dude!!!!!")
     });
 })
