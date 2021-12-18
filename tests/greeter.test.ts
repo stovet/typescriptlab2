@@ -15,13 +15,13 @@ describe("test greeter.ts", function (){
 });
 
 describe("test javascriptgreeter", function(){
-    test("test with 'Hi there'", function(){
+    test("test with 'Hi there' steve", function(){
         let greeter = new JavaScriptGreeter("Hi there");
         expect(greeter.greet("steve")). toEqual("console.log(Hi there, steve!)");
     });
-    test("test with 'Hi there'", function(){
-        let greeter = new JavaScriptGreeter("Hy there");
-        expect(greeter.greet("stranger")). toEqual("console.log(Hy there, stranger!)");
+    test("test with 'Hey there' stranger", function(){
+        let greeter = new JavaScriptGreeter("Hey there");
+        expect(greeter.greet("stranger")). toEqual("console.log(Hey there, stranger!)");
     });
 });
 
