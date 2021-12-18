@@ -1,7 +1,7 @@
 import { Greeter } from "../src/greeter";
 import { JavaScriptGreeter} from "../src/JavaScriptGreeter";
 import { LoudGreeter } from "../src/loudGreeter";
-import { HtmlGreeter } from "../src/htmlgreeter"
+import { HtmlGreeter } from "../src/htmlgreeter";
 
 describe("test greeter.ts", function (){
     test("test with 'Hi there'", function(){
@@ -47,5 +47,20 @@ describe("tests loudGreeter", function () {
         greeter.addVolume();
         greeter.addVolume();
         expect(greeter.greet("dude")).toEqual("Hiya, dude!!!!!")
+    });
+});
+
+describe("testing HtmlGreeter", function () {
+    test("test with Hiya, Steve w/ tags <b>", function(){
+        let greeter = new HtmlGreeter("Hiya", "b");
+        expect(greeter.greet("Steve")).toEqual("<b>Hiya, Steve!</b>")
+    });
+    test("test with Hiy, stranger w/ tags <i>", function(){
+        let greeter = new HtmlGreeter("Hey", "i");
+        expect(greeter.greet("stranger")).toEqual("<i>Hey, stranger!</i>")
+    });
+    test("test with Hey, stranger w/ default tags", function(){
+        let greeter = new HtmlGreeter("Hey");
+        expect(greeter.greet("stranger")).toEqual("<h1>Hey, stranger!</h1>")
     });
 })
